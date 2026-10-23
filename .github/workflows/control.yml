@@ -1,0 +1,14 @@
+name: Public Actions Dispatch Control
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  hello:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - run: |
+          echo "SYNTHETIC ONLY — NO PRIVATE CODE OR SECRETS"
+          node --version
