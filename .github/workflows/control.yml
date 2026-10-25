@@ -1,14 +1,10 @@
-name: Public Actions Dispatch Control
+name: Self-hosted routing control
 on:
-  push:
   workflow_dispatch:
-permissions:
-  contents: read
+permissions: {}
 jobs:
-  hello:
-    runs-on: ubuntu-latest
-    timeout-minutes: 5
+  probe:
+    runs-on: [self-hosted, pranxity-diagnostic-unregistered-20261025]
+    timeout-minutes: 1
     steps:
-      - run: |
-          echo "SYNTHETIC ONLY — NO PRIVATE CODE OR SECRETS"
-          node --version
+      - run: echo SELF_HOSTED_ROUTING_CONTROL
